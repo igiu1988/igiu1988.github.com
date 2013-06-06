@@ -105,7 +105,7 @@
   </header>
 
 
-<div class="entry-content"><h1>介绍</h1>
+<div class="entry-content"><h2>介绍</h2>
 
 <p>Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。</p>
 
@@ -116,14 +116,14 @@
 
 <p>该文档适用于那些想在底层进行文字布局操作和字体处理的开发者。如果你想使用高封装接口（using higher-level construct）来开发应用，比如NSTextView（<font color=green>这是一个OS X的控件，并不适用于iOS，iOS里有UITextView，不过UITextView照NSTextView差得太多了，只能说UITextView是简单封装，不过在iOS6之后的UITextView就好多了，支持NSAttributedString了</font>），那么你应该使用Cocoa text system，具体介绍可以查看Text System Overview。如果并不想使用高封装接口，你想自己在Core Graphics context上渲染文字，那么你就要使用Core Text。</p>
 
-<h1>文档组织</h1>
+<h2>文档组织</h2>
 
 <p>该文档以如下章节组织</p>
 
 <p>“Core Text 概述”：该章在设计目的和功能点方面介绍了Core Text system。同样也介绍了系统中中些不透明类型（opaque types），这些类型封装了文字布局和字体处理功能。
 “常用操作（Common Operation）”: 提供了一些代码段和注释，用来示例主要的Core Text不透明类型的主要用法。</p>
 
-<h1>参见</h1>
+<h2>参见</h2>
 
 <p>除了这篇文档，还有一些其它的文档覆盖了关于Core Text的更多方面或者描述了Core Text所使用的软件服务。</p>
 
@@ -186,6 +186,8 @@
         <a class="basic-alignment left" href="/blog/2013/06/05/prepare-to-translate-core-text/" title="Previous Post: 准备翻译CoreText">&laquo; 准备翻译CoreText</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/06/06/octpress-set-up/" title="Next Post: Octopress配置">Octopress配置 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -203,6 +205,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a>
@@ -224,13 +230,6 @@
 </section>
 
 
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/igiuify@gmail.com?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/igiuify@gmail.com">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
 
 
 
@@ -249,7 +248,7 @@
   
 
 <script type="text/javascript">
-      var disqus_shortname = 'wangyang';
+      var disqus_shortname = 'igiuify';
       
         
         // var disqus_developer = 1;

@@ -9,7 +9,11 @@
   <meta name="author" content="汪洋">
 
   
-  <meta name="description" content="介绍 Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。 ">
+  <meta name="description" content="修改默认的markdown文件 每次使用rake post时产生的新文件中都有如下格式： layout: post
+title: "Octopress配置"
+date: 2013-06-06 12:30
+comments: true
+keywords: octopress //默认是没有这行的 &hellip;">
   <meta name="keywords" content="技术, iMac, iOS, OS X, 猫,">
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +87,80 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/06/octpress-set-up/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>修改默认的markdown文件</h2>
+
+<p>每次使用rake post时产生的新文件中都有如下格式：</p>
+
+<pre>
+layout: post
+title: "Octopress配置"
+date: 2013-06-06 12:30
+comments: true
+keywords: octopress     //默认是没有这行的
+categories: 
+</pre>
+
+
+<p>如果想自定义这里的内容，比如添加一个key，比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
+
+<h2>首页只显示正文</h2>
+
+<p>如果你只想让博客首页在显示该博文时只显示到某一处，那就在那儿添加一个<code>&lt;!--more--&gt;</code>。首页会多出一个继续阅读的链接，试一试就知道了。</p>
+
+<h2>推荐几个关于配置这方面的链接</h2>
+
+<ul>
+<li><a href="http://www.yanjiuyanjiu.com/blog/20130402/">我的Octopress</a></li>
+<li><a href="http://octopress.org/docs/">octopress官方文档</a></li>
+<li><a href="http://linyi.herokuapp.com/blog/config-octopress.html">octopress的个性化配置</a></li>
+<li><a href="http://whbzju.github.io/blog/2013/03/01/octopress-custom-config/">涉及导航，分类，sina，评论</a></li>
+<li><a href="http://khaos.github.io/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
+</ul>
+
+
+<h2>迁移你的博客系统</h2>
+
+<ul>
+<li><a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">Clone Your Octopress to Blog From Two Places</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a></h1>
     
     
@@ -108,7 +186,7 @@
   </header>
 
 
-  <div class="entry-content"><h1>介绍</h1>
+  <div class="entry-content"><h2>介绍</h2>
 
 <p>Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。</p>
 
@@ -381,6 +459,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a>
       </li>
     
@@ -400,13 +482,6 @@
 </section>
 
 
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/igiuify@gmail.com?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/igiuify@gmail.com">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
 
 
 
@@ -424,7 +499,7 @@
   
 
 <script type="text/javascript">
-      var disqus_shortname = 'wangyang';
+      var disqus_shortname = 'igiuify';
       
         
         var disqus_script = 'count.js';

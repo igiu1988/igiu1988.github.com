@@ -4,7 +4,7 @@
   <title><![CDATA[发疯的猫的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-06-06T13:13:11+08:00</updated>
+  <updated>2013-06-06T13:21:42+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -123,7 +123,11 @@ categories:
     <id>http://igiu1988.github.io/blog/2013/06/04/ios-core-data-guide</id>
     <content type="html"><![CDATA[<p>做了一年多iOS开发，真没怎么用过Core Data，来新公司一直没有活，就看Core Data了。网上一搜一大把关于Core Data的教程，我以我自己的方式重新再说一次，如看不懂就再自己搜索吧。</p>
 
-<p>Core Data不是数据库，只是对SQLite的封装，集成了很多内容，高效。</p>
+<h2>注意</h2>
+
+<p>Core Data不是数据库，只是对SQLite的封装，集成了很多内容，并且高效。</p>
+
+<h2>开始</h2>
 
 <p>我新建了一个类，SQLManager : NSObject</p>
 

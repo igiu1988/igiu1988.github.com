@@ -4,7 +4,7 @@
   <title><![CDATA[发疯的猫的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-06-06T13:21:42+08:00</updated>
+  <updated>2013-06-06T14:23:04+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -32,7 +32,7 @@ categories:
 </pre>
 
 
-<p>如果想自定义这里的内容，比如添加一个key，比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
+<p>如果想自定义这里的内容，比如添加一个key，<!--more-->比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
 
 <h2>首页只显示正文</h2>
 
@@ -108,11 +108,14 @@ categories:
     <link href="http://igiu1988.github.io/blog/2013/06/05/prepare-to-translate-core-text/"/>
     <updated>2013-06-05T16:03:00+08:00</updated>
     <id>http://igiu1988.github.io/blog/2013/06/05/prepare-to-translate-core-text</id>
-    <content type="html"><![CDATA[<p>TMD，觉得要是在这里竟写一些别人都说过的东西也太没意思了，不过自己也很菜，写不出什么原创，干脆翻译些什么吧。于是乎准备翻译一下Core Text Programming Gudie，把Overview翻译完，就发布博客，要不都没啥原创不敢发布啊</p>
+    <content type="html"><![CDATA[<p>TMD，觉得要是在这里竟写一些别人都说过的东西也太没意思了，不过自己也很菜，写不出什么原创，干脆翻译些什么吧。于是乎准备翻译一下Core Text Programming Gudie，把Overview翻译完，就发布博客，要不都没啥原创不敢发布啊。</p>
+
+<!--more-->
+
 
 <p>英语侥幸过了四级，只比及格线多6分，这两年也没有额外学习英语，翻译出来的东西如果能有幸让大家看到，并且哪怕只是帮助到大家一点点，那我也算积德了。</p>
 
-<p>翻译中加了自己的一些话，我用<strong><em>斜体</em></strong>以区分，加上自己的一些话是觉得这样写应该更易于理解。</p>
+<p>翻译中加了自己的一些话，我用<font color=green>绿色</font>加以区分，加上自己的一些话是觉得这样写应该更易于理解。</p>
 ]]></content>
   </entry>
   
@@ -132,6 +135,11 @@ categories:
 <p>我新建了一个类，SQLManager : NSObject</p>
 
 <p>添加了一个类方法，目的是全局使用一个SQLManager对象</p>
+
+<!--more-->
+
+
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

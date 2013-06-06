@@ -72,8 +72,8 @@ keywords: octopress //默认是没有这行的 &hellip;">
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">全部</a></li>
 </ul>
 
 </nav>
@@ -126,31 +126,12 @@ categories:
 </pre>
 
 
-<p>如果想自定义这里的内容，比如添加一个key，比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
-
-<h2>首页只显示正文</h2>
-
-<p>如果你只想让博客首页在显示该博文时只显示到某一处，那就在那儿添加一个<code>&lt;!--more--&gt;</code>。首页会多出一个继续阅读的链接，试一试就知道了。</p>
-
-<h2>推荐几个关于配置这方面的链接</h2>
-
-<ul>
-<li><a href="http://www.yanjiuyanjiu.com/blog/20130402/">我的Octopress</a></li>
-<li><a href="http://octopress.org/docs/">octopress官方文档</a></li>
-<li><a href="http://linyi.herokuapp.com/blog/config-octopress.html">octopress的个性化配置</a></li>
-<li><a href="http://whbzju.github.io/blog/2013/03/01/octopress-custom-config/">涉及导航，分类，sina，评论</a></li>
-<li><a href="http://khaos.github.io/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
-</ul>
-
-
-<h2>迁移你的博客系统</h2>
-
-<ul>
-<li><a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">Clone Your Octopress to Blog From Two Places</a></li>
-</ul>
-
-</div>
+<p>如果想自定义这里的内容，比如添加一个key，</div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/06/octpress-set-up/">继续阅读 &rarr;</a>
+    </footer>
   
 
 
@@ -194,7 +175,7 @@ categories:
   
   
     <footer>
-      <a rel="full-article" href="/blog/2013/06/05/coretext-introduction/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2013/06/05/coretext-introduction/">继续阅读 &rarr;</a>
     </footer>
   
 
@@ -231,13 +212,14 @@ categories:
   </header>
 
 
-  <div class="entry-content"><p>TMD，觉得要是在这里竟写一些别人都说过的东西也太没意思了，不过自己也很菜，写不出什么原创，干脆翻译些什么吧。于是乎准备翻译一下Core Text Programming Gudie，把Overview翻译完，就发布博客，要不都没啥原创不敢发布啊</p>
+  <div class="entry-content"><p>TMD，觉得要是在这里竟写一些别人都说过的东西也太没意思了，不过自己也很菜，写不出什么原创，干脆翻译些什么吧。于是乎准备翻译一下Core Text Programming Gudie，把Overview翻译完，就发布博客，要不都没啥原创不敢发布啊。</p>
 
-<p>英语侥幸过了四级，只比及格线多6分，这两年也没有额外学习英语，翻译出来的东西如果能有幸让大家看到，并且哪怕只是帮助到大家一点点，那我也算积德了。</p>
-
-<p>翻译中加了自己的一些话，我用<strong><em>斜体</em></strong>以区分，加上自己的一些话是觉得这样写应该更易于理解。</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/05/prepare-to-translate-core-text/">继续阅读 &rarr;</a>
+    </footer>
   
 
 
@@ -285,121 +267,12 @@ categories:
 
 <p>添加了一个类方法，目的是全局使用一个SQLManager对象</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">SQLManager</span> <span class="o">*</span><span class="p">)</span><span class="nf">sharedSQLManager</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="k">static</span> <span class="n">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">static</span> <span class="kt">id</span> <span class="n">shareInstance</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
-</span><span class='line'>        <span class="n">shareInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">shareInstance</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Core Data涉及三个对象是肯定每次都要用的的</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSManagedObjectModel</span> <span class="o">*</span><span class="n">managedObjectModel</span><span class="p">;</span>
-</span><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSManagedObjectContext</span> <span class="o">*</span><span class="n">managedObjectContext</span><span class="p">;</span>
-</span><span class='line'><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSPersistentStoreCoordinator</span> <span class="o">*</span><span class="n">persistentStoreCoordinator</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>使用一个initCoreData来初始化这三个对象（SQLManager的属性）</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">initCoreData</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="c1">// 既然涉及数据库，肯定要有一个文件来存储数据</span>
-</span><span class='line'>    <span class="n">NSArray</span> <span class="o">*</span><span class="n">paths</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="n">YES</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">NSString</span> <span class="o">*</span><span class="n">basePath</span> <span class="o">=</span> <span class="p">[</span><span class="n">paths</span> <span class="nl">objectAtIndex:</span><span class="mi">0</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">NSURL</span> <span class="o">*</span><span class="n">storeUrl</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="nl">fileURLWithPath:</span><span class="p">[</span><span class="n">basePath</span> <span class="nl">stringByAppendingPathComponent:</span><span class="s">@&quot;TestDB.sqlite&quot;</span><span class="p">]];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="cm">/* 初始化 managedObjectModel </span>
-</span><span class='line'><span class="cm">     * managedObjectModel 的初始化是依据工程中的xcdatamodeld文件，</span>
-</span><span class='line'><span class="cm">     */</span>
-</span><span class='line'>    <span class="n">_managedObjectModel</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSManagedObjectModel</span> <span class="nl">mergedModelFromBundles:</span><span class="nb">nil</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="cm">/* 初始化 persistentStoreCoordinator</span>
-</span><span class='line'><span class="cm">     * persistentStoreCoordinator 的初始化需要刚才的 managedObjectModel，这里我添加了一个option，该option会在数据库的版本控制及轻量迁移中用到。</span>
-</span><span class='line'><span class="cm">     * 数据库的版本控制及轻量迁移见另一篇文章: iOS Core Data Version</span>
-</span><span class='line'><span class="cm">     */</span>
-</span><span class='line'>    <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
-</span><span class='line'>    <span class="c1">// option use for lightweight migration</span>
-</span><span class='line'>    <span class="n">NSDictionary</span> <span class="o">*</span> <span class="n">option</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObjectsAndKeys:</span>
-</span><span class='line'>                             <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithBool:</span><span class="n">YES</span><span class="p">],</span> <span class="n">NSMigratePersistentStoresAutomaticallyOption</span><span class="p">,</span>
-</span><span class='line'>                             <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithBool:</span><span class="n">YES</span><span class="p">],</span> <span class="n">NSInferMappingModelAutomaticallyOption</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">_persistentStoreCoordinator</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSPersistentStoreCoordinator</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithManagedObjectModel:</span><span class="n">_managedObjectModel</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">_persistentStoreCoordinator</span> <span class="nl">addPersistentStoreWithType:</span><span class="n">NSSQLiteStoreType</span> <span class="nl">configuration:</span><span class="nb">nil</span> <span class="nl">URL:</span><span class="n">storeUrl</span> <span class="nl">options:</span><span class="n">option</span> <span class="nl">error:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@: %@&quot;</span><span class="p">,</span> <span class="p">[[[</span><span class="n">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="n">infoDictionary</span><span class="p">]</span> <span class="nl">objectForKey:</span><span class="s">@&quot;CFBundleDisplayName&quot;</span><span class="p">],</span> <span class="n">error</span><span class="p">.</span><span class="n">localizedDescription</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="cm">/* 初始化 managedObjectContext</span>
-</span><span class='line'><span class="cm">     * managedObjectContext 的初始化需要上面的 persistentStoreCoordinator</span>
-</span><span class='line'><span class="cm">     */</span>
-</span><span class='line'>    <span class="n">_managedObjectContext</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSManagedObjectContext</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">_managedObjectContext</span><span class="p">.</span><span class="n">persistentStoreCoordinator</span> <span class="o">=</span> <span class="n">_persistentStoreCoordinator</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>参考文档：</p>
-
-<ul>
-<li>Core Data Basics</li>
-<li>Core Data Programming Gudie</li>
-<li>google及baidu的各种搜索</li>
-</ul>
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/04/ios-core-data-guide/">继续阅读 &rarr;</a>
+    </footer>
   
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[发疯的猫的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-06-06T12:13:05+08:00</updated>
+  <updated>2013-06-06T12:14:58+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -14,16 +14,16 @@
 
   
   <entry>
-    <title type="html"><![CDATA[CoreText-介绍]]></title>
+    <title type="html"><![CDATA[CoreText(1)-介绍]]></title>
     <link href="http://igiu1988.github.io/blog/2013/06/05/coretext-introduction/"/>
     <updated>2013-06-05T16:05:00+08:00</updated>
     <id>http://igiu1988.github.io/blog/2013/06/05/coretext-introduction</id>
-    <content type="html"><![CDATA[<!--more-->
-
-
-<h1>介绍</h1>
+    <content type="html"><![CDATA[<h1>介绍</h1>
 
 <p>Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。</p>
+
+<!--more-->
+
 
 <p>Core Text 布局引擎(layout engine)是专门设计用来使文字布局操作更简单和避免副作用而设计。<strong><em>既然Core Text能够实现文字排版和控制字体，那么它内部就会有布局引擎（实现排版）和字体编程接口（控制字体）</em></strong>。Core Text字体编程接口(font programming interface)与Core Text布局引擎是互补的，它们是被设计用于能够原生地处理Unicode编码字体，统一不同的OS X字体设备成一个独立且全面的编程接口。</p>
 

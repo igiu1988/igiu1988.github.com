@@ -9,7 +9,7 @@
   <meta name="author" content="汪洋">
 
   
-  <meta name="description" content="介绍 Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。 Core Text 布局引擎( &hellip;">
+  <meta name="description" content="">
   <meta name="keywords" content="技术, iMac, iOS, OS X, 猫,">
 
   <!-- http://t.co/dKP3o1e -->
@@ -31,6 +31,18 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41507045-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -89,47 +101,19 @@
 
 <time datetime="2013-06-05T16:05:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
         
+         | <a href="/blog/2013/06/05/coretext-introduction/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h1>介绍</h1>
-
-<p>Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。</p>
-
-<p>Core Text 布局引擎(layout engine)是专门设计用来使文字布局操作更简单和避免副作用而设计。<strong><em>既然Core Text能够实现文字排版和控制字体，那么它内部就会有布局引擎（实现排版）和字体编程接口（控制字体）</em></strong>。Core Text字体编程接口(font programming interface)与Core Text布局引擎是互补的，它们是被设计用于能够原生地处理Unicode编码字体，统一不同的OS X字体设备成一个独立且全面的编程接口。</p>
-
-<p>该文档适用于那些想在底层进行文字布局操作和字体处理的开发者。如果你想使用高封装接口(using higher-level construct)来开发应用，比如NSTextView(<strong><em>这是一个OS X的控件，并不适用于iOS，iOS里有UITextView，不过UITextView照NSTextView差得太多了，只能说UITextView是简单封装，不过在iOS6之后的UITextView就好多了，支持NSAttributedString了</em></strong>)，那么你应该使用Cocoa text 系统，具体介绍可以查看Text System Overview。如果并不想使用高封装接口，你想自己在Core Graphics context上渲染文字，那么你就要使用Core Text。</p>
-
-<h1>文档组织</h1>
-
-<p>该文档以如下章节组织</p>
-
-<p>“Core Text 概述”：该章在设计目的和功能点方面介绍了Core Text系统。同样也介绍了系统中中些不透明类型(opaque types)，这些类型封装了文字布局和字体处理功能。
-“常用操作(<strong><em>Common Operation</em></strong>)”: 提供了一些代码段和注释，用来示例主要的Core Text不透明类型的主要用法。</p>
-
-<h1>参见</h1>
-
-<p>除了这篇文档，还有一些其它的文档覆盖了关于Core Text的更多方面或者描述了Core Text所使用的软件服务。</p>
-
-<ul>
-<li>Core Text Reference Collection 为Core Text布局和字体API提供了完整的参考信息.</li>
-<li>CoreTextTest 示例项目，它展示了在完整的应用(a complete Carbon application)的内部中如何使用Core Text。</li>
-<li>CoreTextArcCocoa 示例项目，它示范了在Core Text Cocoa 应用中如何使用fonts, lines, runs。</li>
-<li>Core Foundation Design Concepts 和 Core Foundation Framework Reference 描述了Core Foundation，Core Foundation是一个提供了通用数据类型抽象和Core Text所用到的基本软件服务的框架</li>
-</ul>
-
-
-<p>下面的文件提供了到讲解Cocoa text system文档切入点</p>
-
-<ul>
-<li>Text System Overview介绍了Cocoa text system.</li>
-<li>Text Layout Programming Guide for Cocoa讲解了Cocoa text布局引擎</li>
-</ul>
-
-</div>
+  <div class="entry-content"></div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/05/coretext-introduction/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -157,6 +141,8 @@
 
 
 <time datetime="2013-06-05T16:03:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/05/prepare-to-translate-core-text/#disqus_thread">Comments</a>
         
       </p>
     
@@ -197,6 +183,8 @@
 
 
 <time datetime="2013-06-04T15:29:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/04/ios-core-data-guide/#disqus_thread">Comments</a>
         
       </p>
     
@@ -354,6 +342,8 @@
 
 <time datetime="2013-06-04T13:42:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
         
+         | <a href="/blog/2013/06/04/bluetooth-and-wifi-in-imac/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -406,6 +396,13 @@
 </section>
 
 
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/igiuify@gmail.com?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/igiuify@gmail.com">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
 
 
 
@@ -422,9 +419,30 @@
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'wangyang';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[发疯的猫的博客]]></title>
+  <title><![CDATA[胖子汪洋的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-06-06T16:00:45+08:00</updated>
+  <updated>2013-06-07T12:27:55+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Core Text (2) Overview]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/06/06/core-text-overview/"/>
+    <updated>2013-06-06T16:18:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/06/06/core-text-overview</id>
+    <content type="html"><![CDATA[<p>Core Text 框架是一个用于文本布局和字体处理的高级的底层技术。专为高性能和易用性而设计，Core Text布局引擎比ATSUI (Apple Type Services for Unicode Imageing).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress配置]]></title>
@@ -38,7 +47,7 @@ categories:
 
 <p>如果你只想让博客首页在显示该博文时只显示到某一处，那就在那儿添加一个<code>&lt;!--more--&gt;</code>。首页会多出一个继续阅读的链接，试一试就知道了。</p>
 
-<h2>推荐几个关于配置这方面的链接</h2>
+<h2>我所参考的几个博客</h2>
 
 <ul>
 <li><a href="http://www.yanjiuyanjiu.com/blog/20130402/">我的Octopress</a></li>
@@ -46,6 +55,7 @@ categories:
 <li><a href="http://linyi.herokuapp.com/blog/config-octopress.html">octopress的个性化配置</a></li>
 <li><a href="http://whbzju.github.io/blog/2013/03/01/octopress-custom-config/">涉及导航，分类，sina，评论</a></li>
 <li><a href="http://khaos.github.io/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
+<li>[]</li>
 </ul>
 
 

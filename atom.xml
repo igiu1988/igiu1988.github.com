@@ -4,7 +4,7 @@
   <title><![CDATA[胖子汪洋的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-06-07T12:39:23+08:00</updated>
+  <updated>2013-06-28T08:36:19+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -42,6 +42,17 @@ categories:
 
 
 <p>如果想自定义这里的内容，比如添加一个key，<!--more-->比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
+
+<h2>让google search结果显示你的google+头像</h2>
+
+<ul>
+<li>在<a href="https://www.google.com.hk/webmasters/tools/richsnippets?q=www.catcrazy.cn&amp;html=">Structured Data Testing Tool</a>中测试是否已经正确设置</li>
+<li>在<a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=1408986">Author information in search results
+</a>中了解更多关于这方面东西</li>
+<li>其它方面自己google吧
+<img src="testgoogle.png" alt="testGoogle" /></li>
+</ul>
+
 
 <h2>首页只显示正文</h2>
 

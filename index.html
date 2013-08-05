@@ -8,7 +8,7 @@
   <title>胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
-  <meta name="description" content="废话 看Core Animation相关的例子不下10次，只有最近一次才看得算是明白，然后又看了一点文档。我不是什么爱学习的人，也不想特意去先学习点什么东西以便留着以后用。我只是碰到了，我就看，看不明白拉倒，哪天碰到了再看，总有一天能看明白。 瞅了一眼Core Animation Basics， &hellip;">
+  <meta name="description" content="在 Xcode 里 debug 时你会不会有这种想法：在一个 for 循环里，我只需要在 i==102时才开始 debug；或者一个比较实际的例子，我想在 tableView:cellForRowAtIndexPath:当 indexPath 是[15, 0]才开始 debug。 &hellip;">
   <meta name="keywords" content="技术, iMac, iOS, OS X, 猫,">
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,73 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/05/power-your-debug-in-xcode/">Power Your Debug in Xcode</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-05T10:29:00+08:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/05/power-your-debug-in-xcode/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在 Xcode 里 debug 时你会不会有这种想法：在一个 for 循环里，我只需要在 i==102时才开始 debug；或者一个比较实际的例子，我想在 tableView:cellForRowAtIndexPath:当 indexPath 是[15, 0]才开始 debug。
+我肯定有那么一部分人会和我一样在那个地方写一个类似这样的代码，在 nslog 处打个断点。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">102</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;a&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>看完这篇文章你就不需要这么做了，你会知道更多高级的技巧。<strong><font color='red' size='5'>Power your debug in xcode!!!</font></strong></p>
+
+<p>该文包括</p>
+
+<ul>
+<li>让断点在合适的时候停下</li>
+<li>断点条件语法注意</li>
+<li>在断点条件发生时执行特别的任务</li>
+<li>在调试时改变变量的值</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/05/power-your-debug-in-xcode/">继续阅读 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/06/28/core-animation-notes-1/">Core Animation Notes 1</a></h1>
     
     
@@ -144,174 +211,12 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>它干了什么</h2>
-
-<p>这个代码简单些，大概知道干了什么事，是要进行放大操作，放大到1.05倍，时间0.3s，autoreverses意思是自己恢复，timingFunction的意思在文档里写的我没看懂，英语太次，google了一下，找到一个词，感觉挺形象，elastic function，可以直白的翻译成“松紧函数”，或者说是“弹性函数”。上面代码里用的是kCAMediaTimingFunctionEaseIn，放大动画的运行效果是会先慢后快（渐入），当然如果是EaseInEaseOut，那就是渐入渐出。elastic function这个词我取自<a href="http://stackoverflow.com/questions/5161465/how-to-create-custom-easing-function-with-core-animation">该文章</a>，文章里有自定义elastic function的内容，值得阅读。</p>
-
-<p>对于上面代码有一点要注意：就是首先要先removeAnimationForKey。</p>
-
-<h2>什么时候调用</h2>
-
-<p>当你想让这个label执行一次动画时，就调用一次</p>
-
-<h2>想加多个动画到这个Label上怎么办</h2>
-
-<p>先上一段代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">animationGroup:</span><span class="p">(</span><span class="n">UILabel</span> <span class="o">*</span><span class="p">)</span><span class="nv">label</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="p">[</span><span class="n">label</span><span class="p">.</span><span class="n">layer</span> <span class="nl">removeAnimationForKey:</span><span class="s">@&quot;animationGroup&quot;</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CABasicAnimation</span> <span class="o">*</span><span class="n">pulseAnimation</span> <span class="o">=</span> <span class="p">[</span><span class="n">CABasicAnimation</span> <span class="nl">animationWithKeyPath:</span><span class="s">@&quot;transform.scale&quot;</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">toValue</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithFloat:</span><span class="mf">1.15</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CABasicAnimation</span> <span class="o">*</span><span class="n">pulseColorAnimation</span> <span class="o">=</span> <span class="p">[</span><span class="n">CABasicAnimation</span> <span class="nl">animationWithKeyPath:</span><span class="s">@&quot;backgroundColor&quot;</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">pulseColorAnimation</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pulseColorAnimation</span><span class="p">.</span><span class="n">fillMode</span> <span class="o">=</span> <span class="n">kCAFillModeForwards</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pulseColorAnimation</span><span class="p">.</span><span class="n">toValue</span> <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)[</span><span class="n">UIColorFromRGBA</span><span class="p">(</span><span class="mh">0xFF0000</span><span class="p">,</span> <span class="mf">.75</span><span class="p">)</span> <span class="n">CGColor</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CABasicAnimation</span> <span class="o">*</span><span class="n">rotateLayerAnimation</span> <span class="o">=</span> <span class="p">[</span><span class="n">CABasicAnimation</span> <span class="nl">animationWithKeyPath:</span><span class="s">@&quot;transform.rotation&quot;</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">rotateLayerAnimation</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">rotateLayerAnimation</span><span class="p">.</span><span class="n">beginTime</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">rotateLayerAnimation</span><span class="p">.</span><span class="n">fillMode</span> <span class="o">=</span> <span class="n">kCAFillModeBoth</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">rotateLayerAnimation</span><span class="p">.</span><span class="n">toValue</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithFloat:</span><span class="n">DEGREES_TO_RADIANS</span><span class="p">(</span><span class="mf">45.</span><span class="p">)];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CAAnimationGroup</span> <span class="o">*</span><span class="n">group</span> <span class="o">=</span> <span class="p">[</span><span class="n">CAAnimationGroup</span> <span class="n">animation</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">group</span><span class="p">.</span><span class="n">animations</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span><span class="n">pulseAnimation</span><span class="p">,</span> <span class="n">pulseColorAnimation</span><span class="p">,</span> <span class="n">rotateLayerAnimation</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">group</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">group</span><span class="p">.</span><span class="n">timingFunction</span> <span class="o">=</span> <span class="p">[</span><span class="n">CAMediaTimingFunction</span> <span class="nl">functionWithName:</span><span class="n">kCAMediaTimingFunctionEaseInEaseOut</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">group</span><span class="p">.</span><span class="n">autoreverses</span> <span class="o">=</span> <span class="n">YES</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">group</span><span class="p">.</span><span class="n">repeatCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">[</span><span class="n">label</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addAnimation:</span><span class="n">group</span> <span class="nl">forKey:</span><span class="s">@&quot;animationGroup&quot;</span><span class="p">];</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>最后用一个CAAnimationGroup来管理所有的动画，自己去看一下CAAnimationGroup Class Reference，里面有些注意事项需要注意。</p>
-
-<h2>提出问题</h2>
-
-<p>上面讲的这些都是直接在某个已经存在的view.layer上操作，如果想实现一个类似如下效果该怎么办</p>
-
-<p>解决方法：
-&ndash; 以动画所需要的内容创建一个layer
-&ndash; 给layer添加一些动画
-&ndash; 将layer添加到mainView上
-&ndash; 动画结束，删除该layer</p>
-
-<h2>只说解决方法的第一条</h2>
-
-<p>如何创建一个layer，并让该layer显示我们需要的内容，直接上代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createLayerWithContent:</span><span class="p">(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">targetView</span> <span class="nf">InCoordinateSystem:</span><span class="p">(</span><span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">coordinateSystemView</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="n">UIGraphicsBeginImageContext</span><span class="p">(</span><span class="n">targetView</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">CGContextRef</span> <span class="n">context</span> <span class="o">=</span> <span class="n">UIGraphicsGetCurrentContext</span><span class="p">();</span>
-</span><span class='line'>    <span class="c1">// 将targetView的内容渲染到context中</span>
-</span><span class='line'>    <span class="p">[</span><span class="n">targetView</span><span class="p">.</span><span class="n">layer</span> <span class="nl">renderInContext:</span><span class="n">context</span><span class="p">];</span>
-</span><span class='line'>    <span class="c1">// 从context中取得该图片</span>
-</span><span class='line'>    <span class="n">CGImageRef</span> <span class="n">imgRef</span> <span class="o">=</span> <span class="n">CGBitmapContextCreateImage</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
-</span><span class='line'>    <span class="c1">// UIImage *contextImage = UIGraphicsGetImageFromCurrentImageContext();</span>
-</span><span class='line'>    <span class="n">UIGraphicsEndImageContext</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">//使用imgRef创建一个layer</span>
-</span><span class='line'>    <span class="n">CALayer</span> <span class="o">*</span><span class="n">layer</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CALayer</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">layer</span><span class="p">.</span><span class="n">contents</span> <span class="o">=</span> <span class="p">(</span><span class="n">__bridge</span> <span class="kt">id</span><span class="p">)</span><span class="n">imgRef</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// 指定其frame，并添加到coordinateSystemView.layer</span>
-</span><span class='line'>    <span class="n">layer</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="p">[</span><span class="n">coordinateSystemView</span> <span class="nl">convertRect:</span><span class="n">targetView</span><span class="p">.</span><span class="n">frame</span> <span class="nl">fromView:</span><span class="n">targetView</span><span class="p">.</span><span class="n">superview</span><span class="p">];</span>
-</span><span class='line'>    <span class="p">[</span><span class="n">coordinateSystemView</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addSublayer:</span><span class="n">transitionLayer</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// TODO: some code to animate the layer</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>targetView就要是展现的动画层，新layer的内容就是从targetView中渲染过来的
-coordinateSystemView应该是动画层所在的父view</p>
-
-<p>对于CGContextRef也有很多可以利用的方法，比如裁剪，旋转，绽放，具体自己google
-对于CALayer当然也有很多属性，比如设置透明度，背景色等。</p>
-
-<h2>几大动画方式</h2>
-
-<ul>
-<li>CABasicAnimation</li>
-<li>CAKeyframeAnimation</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="n">UIGraphicsBeginImageContext</span><span class="p">(</span><span class="n">targetView</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">CGContextRef</span> <span class="n">context</span> <span class="o">=</span> <span class="n">UIGraphicsGetCurrentContext</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">[</span><span class="n">targetView</span><span class="p">.</span><span class="n">layer</span> <span class="nl">renderInContext:</span><span class="n">context</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">CGImageRef</span> <span class="n">imgRef</span> <span class="o">=</span> <span class="n">CGBitmapContextCreateImage</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">UIGraphicsEndImageContext</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>贝赛尔曲线</h2>
-
-<h2>什么时候使用CATransaction</h2>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/28/core-animation-notes-1/">继续阅读 &rarr;</a>
+    </footer>
   
 
 
@@ -609,6 +514,10 @@ categories:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/05/power-your-debug-in-xcode/">Power Your Debug in Xcode</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/28/core-animation-notes-1/">Core Animation Notes 1</a>
       </li>
     
@@ -622,10 +531,6 @@ categories:
     
       <li class="post">
         <a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/05/prepare-to-translate-core-text/">准备翻译CoreText</a>
       </li>
     
   </ul>

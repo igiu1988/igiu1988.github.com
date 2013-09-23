@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CoreText（1）-介绍 - 胖子汪洋的博客</title>
+  <title>开发笔记 1 - 胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
-  <meta name="description" content="Core Text Programming Guide - Introduce">
-  <meta name="keywords" content="CoreText, 介绍, introduce, 入门">
+  <meta name="description" content="viewWillAppear 与 viewWillLayoutSubviews viewWillLayoutSubviews 只在controller要显示时才会走一遍。viewWillAppear则会再被push、modal或者pop back时都会走一次 &hellip;">
+  <meta name="keywords" content="viewWillAppear viewWillLayoutSubviews">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/06/05/coretext-introduction">
+  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/09/22/develop-note-1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="胖子汪洋的博客" type="application/atom+xml">
@@ -49,7 +49,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">胖子汪洋的博客</a></h1>
   
-    <h2>猫中的疯子</h2>
+    <h2>一只超级简单的喵星转世人</h2>
   
 </hgroup>
 
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">CoreText（1）-介绍</h1>
+      <h1 class="entry-title">开发笔记 1</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-06-05T16:05:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+<time datetime="2013-09-22T14:33:00+08:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,41 +104,11 @@
   </header>
 
 
-<div class="entry-content"><h2>介绍</h2>
-
-<p>Core Text是一门为了实现文字排版和控制字体的高级底层技术。它以高性能及易用性为基本标准进行设计。Core Text API适用于OS X v10.5以后版本，在所有的的这些OS X系统应用环境中都可以使用。在iOS3.2及以后版本也同样适用。</p>
-
-<!--more-->
-
-
-<p>Core Text 布局引擎（layout engine）是专门设计用来使文字布局操作更简单和避免副作用而设计。<font color=green>既然Core Text能够实现文字排版和控制字体，那么它内部就会有布局引擎（布局引擎就是用来实现排版）和字体编程接口（字体编程接口就是用来控制字体的）</font>。Core Text字体编程接口（font programming interface）与Core Text布局引擎是互补的，它们是被设计用于能够原生地处理Unicode编码字体，统一不同的OS X字体设备成一个独立且全面的编程接口。</p>
-
-<p>该文档适用于那些想在底层进行文字布局操作和字体处理的开发者。如果你想使用高封装接口（using higher-level construct）来开发应用，比如NSTextView（<font color=green>这是一个OS X的控件，并不适用于iOS，iOS里有UITextView，不过UITextView照NSTextView差得太多了，只能说UITextView是简单封装，不过在iOS6之后的UITextView就好多了，支持NSAttributedString了</font>），那么你应该使用Cocoa text system，具体介绍可以查看Text System Overview。如果并不想使用高封装接口，你想自己在Core Graphics context上渲染文字，那么你就要使用Core Text。</p>
-
-<h2>文档组织</h2>
-
-<p>该文档以如下章节组织</p>
-
-<p>“Core Text 概述”：该章在设计目的和功能点方面介绍了Core Text system。同样也介绍了系统中中些不透明类型（opaque types），这些类型封装了文字布局和字体处理功能。
-“常用操作（Common Operation）”: 提供了一些代码段和注释，用来示例主要的Core Text不透明类型的主要用法。</p>
-
-<h2>参见</h2>
-
-<p>除了这篇文档，还有一些其它的文档覆盖了关于Core Text的更多方面或者描述了Core Text所使用的软件服务。</p>
+<div class="entry-content"><h3>viewWillAppear 与 viewWillLayoutSubviews</h3>
 
 <ul>
-<li>Core Text Reference Collection 为Core Text布局和字体API提供了完整的参考信息.</li>
-<li>CoreTextTest 示例项目，它展示了在完整的应用（a complete Carbon application）的内部中如何使用Core Text。</li>
-<li>CoreTextArcCocoa 示例项目，它示范了在Core Text Cocoa 应用中如何使用fonts, lines, runs。</li>
-<li>Core Foundation Design Concepts 和 Core Foundation Framework Reference 描述了Core Foundation，Core Foundation是一个提供了通用数据类型抽象和Core Text所用到的基本软件服务的框架</li>
-</ul>
-
-
-<p>有关Cocoa Text system</p>
-
-<ul>
-<li>Text System Overview介绍了Cocoa text system.</li>
-<li>Text Layout Programming Guide for Cocoa讲解了Cocoa text布局引擎</li>
+<li>viewWillLayoutSubviews 只在controller要显示时才会走一遍。viewWillAppear则会再被push、modal或者pop back时都会走一次</li>
+<li>viewWillLayoutSubviews 在viewDidLoad后会走一次。在运行时如果addsubview时会走再走一次。</li>
 </ul>
 
 </div>
@@ -163,15 +133,21 @@
   
 
 
-<time datetime="2013-06-05T16:05:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2013</time>
+<time datetime="2013-09-22T14:33:00+08:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/kai-fa-bi-ji/'>开发笔记</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/06/05/coretext-introduction/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/06/05/coretext-introduction/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/09/22/develop-note-1/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/09/22/develop-note-1/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -182,10 +158,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/05/prepare-to-translate-core-text/" title="Previous Post: 准备翻译CoreText">&laquo; 准备翻译CoreText</a>
+        <a class="basic-alignment left" href="/blog/2013/08/05/power-your-debug-in-xcode/" title="Previous Post: Xcode 高级调试">&laquo; Xcode 高级调试</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/06/06/octpress-set-up/" title="Next Post: Octopress配置">Octopress配置 &raquo;</a>
       
     </p>
   </footer>
@@ -202,11 +176,23 @@
 <aside class="sidebar">
   
     <section>
+  <h1>关于我</h1>
+  <p>会编程但五音不全的草根普通男青年，长得丑，但求赞。<br>
+  喜欢电子产品，爱看电影，僵尸粉，正在努力让自己多读点书<br>
+  新浪微博：<a href="http://weibo.com/wyfengzi">@wyfengzi</a><br>
+  QQ：747984720<br>
+  </p>
+</section>
+<section>
   <h1>最近发布</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/08/05/power-your-debug-in-xcode/">Power Your Debug in Xcode</a>
+        <a href="/blog/2013/09/22/develop-note-1/">开发笔记 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/05/power-your-debug-in-xcode/">Xcode 高级调试</a>
       </li>
     
       <li class="post">
@@ -214,18 +200,47 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/06/core-text-overview/">Core Text (2) Overview</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a>
+        <a href="/blog/2013/06/04/ios-core-data-guide/">iOS Core Data 入门</a>
       </li>
     
   </ul>
+</section>
+<section>
+  <h1>文章分类</h1>
+    <ul id="category-list"><li><a href='/blog/categories/mac/'>Mac (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/kai-fa-bi-ji/'>开发笔记 (1)</a></li><li><a href='/blog/categories/yan-jiu-yan-jiu/'>研究研究 (3)</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/igiu1988">@igiu1988</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'igiu1988',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -260,8 +275,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/06/05/coretext-introduction/';
-        var disqus_url = 'http://igiu1988.github.io/blog/2013/06/05/coretext-introduction/';
+        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/09/22/develop-note-1/';
+        var disqus_url = 'http://igiu1988.github.io/blog/2013/09/22/develop-note-1/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>power your debug in xcode - 胖子汪洋的博客</title>
+  <title>Xcode 高级调试 - 胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
   <meta name="description" content="在 Xcode 里 debug 时你会不会有这种想法：在一个 for 循环里，我只需要在 i==102时才开始 debug；或者一个比较实际的例子，我想在 tableView:cellForRowAtIndexPath:当 indexPath 是[15, 0]才开始 debug。 &hellip;">
@@ -49,7 +49,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">胖子汪洋的博客</a></h1>
   
-    <h2>猫中的疯子</h2>
+    <h2>一只超级简单的喵星转世人</h2>
   
 </hgroup>
 
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Power Your Debug in Xcode</h1>
+      <h1 class="entry-title">Xcode 高级调试</h1>
     
     
       <p class="meta">
@@ -202,6 +202,12 @@
 <time datetime="2013-08-05T10:29:00+08:00" pubdate data-updated="true">Aug 5<span>th</span>, 2013</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/xcode/'>Xcode</a>
+  
+</span>
+
 
     </p>
     
@@ -221,6 +227,8 @@
         <a class="basic-alignment left" href="/blog/2013/06/28/core-animation-notes-1/" title="Previous Post: Core Animation Notes 1">&laquo; Core Animation Notes 1</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/09/22/develop-note-1/" title="Next Post: 开发笔记 1">开发笔记 1 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -236,11 +244,23 @@
 <aside class="sidebar">
   
     <section>
+  <h1>关于我</h1>
+  <p>会编程但五音不全的草根普通男青年，长得丑，但求赞。<br>
+  喜欢电子产品，爱看电影，僵尸粉，正在努力让自己多读点书<br>
+  新浪微博：<a href="http://weibo.com/wyfengzi">@wyfengzi</a><br>
+  QQ：747984720<br>
+  </p>
+</section>
+<section>
   <h1>最近发布</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/08/05/power-your-debug-in-xcode/">Power Your Debug in Xcode</a>
+        <a href="/blog/2013/09/22/develop-note-1/">开发笔记 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/05/power-your-debug-in-xcode/">Xcode 高级调试</a>
       </li>
     
       <li class="post">
@@ -248,18 +268,47 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/06/core-text-overview/">Core Text (2) Overview</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/05/coretext-introduction/">CoreText（1）-介绍</a>
+        <a href="/blog/2013/06/04/ios-core-data-guide/">iOS Core Data 入门</a>
       </li>
     
   </ul>
+</section>
+<section>
+  <h1>文章分类</h1>
+    <ul id="category-list"><li><a href='/blog/categories/mac/'>Mac (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/kai-fa-bi-ji/'>开发笔记 (1)</a></li><li><a href='/blog/categories/yan-jiu-yan-jiu/'>研究研究 (3)</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/igiu1988">@igiu1988</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'igiu1988',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 

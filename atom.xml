@@ -4,7 +4,7 @@
   <title><![CDATA[胖子汪洋的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-09-23T14:05:40+08:00</updated>
+  <updated>2013-10-09T12:37:56+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -12,6 +12,216 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[关于一周一算法]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/10/09/about-one-algorithm-one-week/"/>
+    <updated>2013-10-09T12:26:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/10/09/about-one-algorithm-one-week</id>
+    <content type="html"><![CDATA[<h3>为什么要写</h3>
+
+<p>大学时老师到是讲了不少算法，可是我哪个也没有背下来，实话是我从来没有背过！！！我是顿悟了吗？要学习了吗？反正得逼着自己学点什么吧，把算法也加入其中吧。</p>
+
+<!--more-->
+
+
+<h3>会涉及到什么</h3>
+
+<p>先从基础的一些排序写起，逐渐深入
+* 排序
+* 矩阵、线性变换
+* 树、图
+* 大学数学中曾经学到的一些公式</p>
+
+<h3>内容特点</h3>
+
+<p>我必须考虑这些东西的实际用途</p>
+
+<h3>写作周期</h3>
+
+<p>做到一周一篇，内容过多就拆分</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[python 学习笔记]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/10/09/note-on-python/"/>
+    <updated>2013-10-09T09:28:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/10/09/note-on-python</id>
+    <content type="html"><![CDATA[<h3>记录我使用python过程中遇到的各种问题</h3>
+
+<!--more-->
+
+
+<h5>程序块的开始要使用冒号来标识，用缩进来表示这段代码都属于一个程序块。</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def foo(list):
+</span><span class='line'>  for item in list:
+</span><span class='line'>      newItem = item + 5
+</span><span class='line'>      print item
+</span><span class='line'>  if list[1] == '1':
+</span><span class='line'>      print "equal"
+</span><span class='line'>  else:
+</span><span class='line'>      print "not equal"
+</span><span class='line'>
+</span><span class='line'>list = ['1', '2', '4']        
+</span><span class='line'>foo (list)</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>在序列中用引号与不用引号是不一样的</h5>
+
+<p>下面代码里的两个list是不一样的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>list1 = ['1', '2', '4']  
+</span><span class='line'>if list1[0] == '1':
+</span><span class='line'>  print 'YES'
+</span><span class='line'>  
+</span><span class='line'>list2 = [1, 2, 4]
+</span><span class='line'>if list2[0] == 1:
+</span><span class='line'>  print 'YES'</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>range后面用的是括号！！！</h5>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[普通冒泡排序]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/09/30/bubblesort/"/>
+    <updated>2013-09-30T10:27:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/09/30/bubblesort</id>
+    <content type="html"><![CDATA[<h3>本文参考了两个文章</h3>
+
+<h5>冒泡排序</h5>
+
+<ul>
+<li><a href="http://blog.csdn.net/lengyuhong/article/details/4659552">lengyuhong的专栏-冒泡算法的优化</a></li>
+<li><a href="https://github.com/linuz/Bubble-Sort/blob/master/bubblesort.py">github: linuz/Bubble-Sort</a></li>
+<li><a href="http://www.cppblog.com/shongbee2/archive/2009/04/25/81038.aspx">冒泡排序</a></li>
+</ul>
+
+
+<h5>选择排序</h5>
+
+<ul>
+<li><a href="http://www.cppblog.com/shongbee2/archive/2009/04/25/81040.html">选择排序</a></li>
+</ul>
+
+
+<h2>关于冒泡</h2>
+
+<h4>思想</h4>
+
+<ul>
+<li>从数组的第一个元素开始，两两比较，大的往后放，经过n-1次比较，最大的放到了n-1位置。</li>
+<li>从数组的第一个元素开始，两两比较，大的往后放，经过n-2次比较，第二大的放在了n-2位置。</li>
+<li>以此类推</li>
+</ul>
+
+
+<!--more-->
+
+
+<h4>尼玛！！！这也不像冒泡啊</h4>
+
+<p>不知道有没有人也像我这么想过：乍一看，每一次都是将最大的放在了最后面（沉底），这怎么是冒泡！！！尼玛！！！
+<img src="http://f.hiphotos.bdimg.com/album/s%3D1600%3Bq%3D90/sign=47abf7a0a60f4bfb88d09a52337f4381/0df431adcbef76098e9f01a02cdda3cc7cd99e7d.jpg" alt="image" /></p>
+
+<p>其实今天我才想明白，虽然每次都是将最大的放在最后，可是从另一方面来看，也就是说每一次都是将其余小的放在了上面，也就可以想成小的往上升，称之为冒泡排序。如果还是不行，可以看下面的流程，我们从更加形象的流程来描述冒泡排序的思想。</p>
+
+<ul>
+<li>从数组<font color = red><strong><em>最后一个元素</em></strong></font>开始，将相邻的挨个比较，小的往前放，经过n-1次比较，最小的就放到了最前面。</li>
+<li>仍然从<font color = red><strong><em>最后一个元素</em></strong></font>开始，经过n-2次比较，第二小的放在了第二位置。</li>
+<li>以此类推</li>
+</ul>
+
+
+<h4>写段python代码</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def bubbleSort(list):
+</span><span class='line'>  issorted = False
+</span><span class='line'>  
+</span><span class='line'>  for i in range(0,len(list)):
+</span><span class='line'>      issorted = True
+</span><span class='line'>      
+</span><span class='line'>      # 在这一趟的比较中，如果发现这一趟的数列已经成有序状态，那就不用排了，并且是整个数列也都算排完了
+</span><span class='line'>      for j in range(0, len(list) - i - 1):
+</span><span class='line'>          if list[j] &gt; list[j+1]:
+</span><span class='line'>              temp = list[j]
+</span><span class='line'>              list[j] = list[j+1]
+</span><span class='line'>              list[j + 1] = temp
+</span><span class='line'>              issorted = False;
+</span><span class='line'>      print "sort ",i, " " , list
+</span><span class='line'>      if (issorted):
+</span><span class='line'>          break;
+</span><span class='line'>      
+</span><span class='line'>              
+</span><span class='line'>list = [7, 4, 1, 3, 9, 2, 8]
+</span><span class='line'>bubbleSort(list)</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>总结</h4>
+
+<ul>
+<li>小的（轻的）逐渐上升到指定位置，从过程来看像冒泡（bubble sort）。</li>
+<li>每一次相邻比较数组都<font color = red><strong><em>有可能</em></strong></font>会发现变化。</li>
+</ul>
+
+
+<h2>选择排序</h2>
+
+<p>每一趟从待排序的数据元素中选出最小（或最大）的一个元素，比较时并不改变数组元素位置，至到一趟比较结束后，才将最小（最大）的元素与首元素（尾元素）交换位置</p>
+
+<p>下面以排出由小到大的数组为例
+以数组array[]为例，选择0位置为最小元素位置，用局部变量temp记住当前的index：0
+*  用array[0]与其它位置元素比较，如果array[x]小于array[0]，temp = x，使用array[x]与剩下元素比较，如果array[y] &lt; array[x], temp = y。直到全部比较完，此时的temp是最小元素的下村，将array[temp]与array[0]交换位置
+*  用array[1]重复上面的步骤</p>
+
+<h2>什么是稳定的排序</h2>
+
+<p>通俗地讲就是能保证排序前2个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。在简单形式化一下，如果Ai = Aj, 排序前Ai在Aj前，那么排序后Ai仍然在Aj前。
+* 冒泡是稳定的
+* 选择是不稳定的</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[开发笔记 1]]></title>

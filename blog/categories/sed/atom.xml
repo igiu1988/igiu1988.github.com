@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sed | 胖子汪洋的博客]]></title>
+  <link href="http://igiu1988.github.io/blog/categories/sed/atom.xml" rel="self"/>
+  <link href="http://igiu1988.github.io/"/>
+  <updated>2013-11-05T14:45:59+08:00</updated>
+  <id>http://igiu1988.github.io/</id>
+  <author>
+    <name><![CDATA[汪洋]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[shell替换文本]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/shellti-huan-wen-ben/"/>
+    <updated>2013-11-05T13:45:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/shellti-huan-wen-ben</id>
+    <content type="html"><![CDATA[<h2>就记录一下sed替换文本的用法</h2>
+
+<h4>该目录下的所有txt中的china替换为chinese</h4>
+
+<p><code>sed -i '' 's,china,chinese,g' *.txt</code> 一个目录下的</p>
+
+<h4>递归所有目录文件中的china替换为chinese</h4>
+
+<p><code>find . -type f -exec sed -i '' 's,china,chinese,g' {} +</code></p>
+
+<h4>下面的命令则是指定了搜索的文件类型，并替换这些文件中的指定内容</h4>
+
+<p><code>find -name "*.txt" -exec sed -i 's,china,chinese,g' {} +</code></p>
+
+<h4>递归查找包含指定字符串的文件:</h4>
+
+<p><code>find . -type f -exec grep "http://10.5.31.143:8080" {} \;</code></p>
+]]></content>
+  </entry>
+  
+</feed>

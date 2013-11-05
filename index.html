@@ -8,7 +8,7 @@
   <title>胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
-  <meta name="description" content="用brew安装tomcat，启动命令是catalina start
+  <meta name="description" content="这几天做了一个推送相关的需求，结果弄明白了一些以前关于证书的疑惑。 先起个头，再写！！！
 ">
   <meta name="keywords" content="技术, iMac, iOS, OS X, 猫,">
 
@@ -83,6 +83,140 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo/">Ios证书制作解惑</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-05T14:06:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这几天做了一个推送相关的需求，结果弄明白了一些以前关于证书的疑惑。</p>
+
+<p>先起个头，再写！！！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/05/ioswu-xian-fa-bu/">Ios无线发布</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-05T14:06:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/05/ioswu-xian-fa-bu/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>先用adhoc方式打包应用。如果adhoc打包有问题，有转看我“ios证书制作解惑”。</p>
+
+<p>剩下的东西也都是copy网上的，我只是稍加整理一下。server已经放到<a href="https://github.com/igiu1988/iosadhoc">github</a>上了。具体参看项目的README</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/05/shellti-huan-wen-ben/">Shell替换文本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-05T13:45:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/05/shellti-huan-wen-ben/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>就记录一下sed替换文本的用法</h2>
+
+<h4>该目录下的所有txt中的china替换为chinese</h4>
+
+<p><code>sed -i '' 's,china,chinese,g' *.txt</code> 一个目录下的</p>
+
+<h4>递归所有目录文件中的china替换为chinese</h4>
+
+<p><code>find . -type f -exec sed -i '' 's,china,chinese,g' {} +</code></p>
+
+<h4>下面的命令则是指定了搜索的文件类型，并替换这些文件中的指定内容</h4>
+
+<p><code>find -name "*.txt" -exec sed -i 's,china,chinese,g' {} +</code></p>
+
+<h4>递归查找包含指定字符串的文件:</h4>
+
+<p><code>find . -type f -exec grep "http://10.5.31.143:8080" {} \;</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/10/14/wo-ji-qi-de-xie-pei-zhi/">我机器的一些配置</a></h1>
     
     
@@ -146,7 +280,32 @@
   </header>
 
 
-  <div class="entry-content"><h4>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”</h4>
+  <div class="entry-content"><h3>Qt学习笔记</h3>
+
+<p>该笔记现处理杂乱无章的状态，等记得一定多了，再分类吧</p>
+
+<ul>
+<li>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”</li>
+<li>explicit关键字的介绍<a href="http://blog.csdn.net/ma_nong/article/details/7696690">Qt C++中的关键字explicit</a></li>
+<li><a href="http://xwz89314.blog.163.com/blog/static/40510004201012725354619/">Q_OBJECT宏</a></li>
+<li>Qt中多继承时，QObject要排在第一位</li>
+<li>Qt控制台输入内容，再转入QString，再转为char *</li>
+</ul>
+
+
+<p>&#8220;`</p>
+
+<pre><code>QString qstr;    QTextStream in(stdin);    in&gt;&gt;qstr;    std::string tempStr = qstr.toStdString();    const char* ch = tempStr.c_str();
+</code></pre>
+
+<p> &#8220;`</p>
+
+<h3>关于一些错误的解决</h3>
+
+<ul>
+<li>比如你的项目名是AAA，运行时提示No rule to make target [路径]/AAA.pro for makefile。其实后面不是for makefile，不过大概的意思就是没有找到makefile中所对应的pro文件，在makefile文件中看一下你会发现pro文件的路径不对，直接用手改过来吗？当然不是。在Qt里对着该项目执行一下Qmake，再运行就ok了，这个问题通常发生在一个项目被移动了另一个地方，而原先的build目录还在引起的，也就是makefile没有被更新引起的。</li>
+</ul>
+
 </div>
   
   
@@ -272,7 +431,7 @@
   </header>
 
 
-  <div class="entry-content"><h3>本文参考了两个文章</h3>
+  <div class="entry-content"><h3>本文参考了的一些文章</h3>
 
 <h5>冒泡排序</h5>
 
@@ -423,192 +582,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/28/core-animation-notes-1/">Core Animation Notes 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-28T08:49:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/28/core-animation-notes-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>废话</h2>
-
-<p>看Core Animation相关的例子不下10次，只有最近一次才看得算是明白，然后又看了一点文档。我不是什么爱学习的人，也不想特意去先学习点什么东西以便留着以后用。我只是碰到了，我就看，看不明白拉倒，哪天碰到了再看，总有一天能看明白。</p>
-
-<p>瞅了一眼Core Animation Basics，看完就忘记了，不得已一边再看一遍文档，一边写文章了。</p>
-
-<h2>上一段代码</h2>
-
-<p>经常的，想实现一个动画，或者只是想看看这个动画怎么写的布局，那就看一下别人写的代码呗。一看，我了个去，看不明白啊。好吧，整个简单的代码先看看</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">scaleLabel:</span><span class="p">(</span><span class="n">UILabel</span> <span class="o">*</span><span class="p">)</span><span class="nv">label</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="p">[</span><span class="n">label</span><span class="p">.</span><span class="n">layer</span> <span class="nl">removeAnimationForKey:</span><span class="s">@&quot;transform.scale&quot;</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CABasicAnimation</span> <span class="o">*</span><span class="n">pulseAnimation</span> <span class="o">=</span> <span class="p">[</span><span class="n">CABasicAnimation</span> <span class="nl">animationWithKeyPath:</span><span class="s">@&quot;transform.scale&quot;</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">duration</span> <span class="o">=</span> <span class="mf">.3</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">toValue</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithFloat:</span><span class="mf">1.05</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">timingFunction</span> <span class="o">=</span> <span class="p">[</span><span class="n">CAMediaTimingFunction</span> <span class="nl">functionWithName:</span><span class="n">kCAMediaTimingFunctionLinear</span><span class="p">];</span>
-</span><span class='line'>    <span class="n">pulseAnimation</span><span class="p">.</span><span class="n">autoreverses</span> <span class="o">=</span> <span class="n">YES</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">[</span><span class="n">label</span><span class="p">.</span><span class="n">layer</span> <span class="nl">addAnimation:</span><span class="n">pulseAnimation</span> <span class="nl">forKey:</span><span class="nb">nil</span><span class="p">];</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/28/core-animation-notes-1/">继续阅读 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/06/octpress-set-up/">Octopress配置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/06/octpress-set-up/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>修改默认的markdown文件</h2>
-
-<p>每次使用rake post时产生的新文件中都有如下格式：</p>
-
-<pre>
-layout: post
-title: "Octopress配置"
-date: 2013-06-06 12:30
-comments: true
-keywords: octopress     //默认是没有这行的
-categories: 
-</pre>
-
-
-<p>如果想自定义这里的内容，比如添加一个key，</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/06/octpress-set-up/">继续阅读 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/04/ios-core-data-guide/">iOS Core Data 入门</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-04T15:29:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/06/04/ios-core-data-guide/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>做了一年多iOS开发，真没怎么用过Core Data，来新公司一直没有活，就看Core Data了。网上一搜一大把关于Core Data的教程，我以我自己的方式重新再说一次，如看不懂就再自己搜索吧。</p>
-
-<h2>注意</h2>
-
-<p>Core Data不是数据库，只是对SQLite的封装，集成了很多内容，并且高效。</p>
-
-<h2>开始</h2>
-
-<p>我新建了一个类，SQLManager : NSObject</p>
-
-<p>添加了一个类方法，目的是全局使用一个SQLManager对象</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/04/ios-core-data-guide/">继续阅读 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -632,6 +605,18 @@ categories:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo/">Ios证书制作解惑</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/05/ioswu-xian-fa-bu/">Ios无线发布</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/05/shellti-huan-wen-ben/">Shell替换文本</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/14/wo-ji-qi-de-xie-pei-zhi/">我机器的一些配置</a>
       </li>
     
@@ -639,23 +624,11 @@ categories:
         <a href="/blog/2013/10/14/qtxue-xi-bi-ji/">Qt学习笔记</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/10/09/about-one-algorithm-one-week/">关于一周一算法</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/09/note-on-python/">Python 学习笔记</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/30/bubblesort/">普通冒泡排序</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>文章分类</h1>
-    <ul id="category-list"><li><a href='/blog/categories/mac/'>mac (1)</a></li><li><a href='/blog/categories/mac/'>Mac (1)</a></li><li><a href='/blog/categories/python/'>python (1)</a></li><li><a href='/blog/categories/qt/'>Qt (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/[?]-zhou-[?]-suan-fa/'>一周一算法 (2)</a></li><li><a href='/blog/categories/kai-fa-bi-ji/'>开发笔记 (1)</a></li><li><a href='/blog/categories/yan-jiu-yan-jiu/'>研究研究 (3)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/ios/'>ios, (2)</a></li><li><a href='/blog/categories/mac/'>mac (1)</a></li><li><a href='/blog/categories/mac/'>Mac (1)</a></li><li><a href='/blog/categories/python/'>python (1)</a></li><li><a href='/blog/categories/qt/'>Qt (1)</a></li><li><a href='/blog/categories/sed/'>sed (1)</a></li><li><a href='/blog/categories/xcode/'>Xcode (1)</a></li><li><a href='/blog/categories/xcode/'>xcode, (2)</a></li><li><a href='/blog/categories/[?]-zhou-[?]-suan-fa/'>一周一算法 (2)</a></li><li><a href='/blog/categories/kai-fa-bi-ji/'>开发笔记 (3)</a></li><li><a href='/blog/categories/yan-jiu-yan-jiu/'>研究研究 (3)</a></li></ul>
 </section>
 
 <section>

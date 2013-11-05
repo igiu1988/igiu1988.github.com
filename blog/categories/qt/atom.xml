@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Qt | 胖子汪洋的博客]]></title>
+  <link href="http://igiu1988.github.io/blog/categories/qt/atom.xml" rel="self"/>
+  <link href="http://igiu1988.github.io/"/>
+  <updated>2013-11-05T14:45:59+08:00</updated>
+  <id>http://igiu1988.github.io/</id>
+  <author>
+    <name><![CDATA[汪洋]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Qt学习笔记]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/"/>
+    <updated>2013-10-14T09:26:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji</id>
+    <content type="html"><![CDATA[<h3>Qt学习笔记</h3>
+
+<p>该笔记现处理杂乱无章的状态，等记得一定多了，再分类吧</p>
+
+<ul>
+<li>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe"退出，退出代码 2”</li>
+<li>explicit关键字的介绍<a href="http://blog.csdn.net/ma_nong/article/details/7696690">Qt C++中的关键字explicit</a></li>
+<li><a href="http://xwz89314.blog.163.com/blog/static/40510004201012725354619/">Q_OBJECT宏</a></li>
+<li>Qt中多继承时，QObject要排在第一位</li>
+<li>Qt控制台输入内容，再转入QString，再转为char *</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>QString qstr;    QTextStream in(stdin);    in&gt;&gt;qstr;    std::string tempStr = qstr.toStdString();    const char* ch = tempStr.c_str();
+</code></pre>
+
+<p> ```</p>
+
+<h3>关于一些错误的解决</h3>
+
+<ul>
+<li>比如你的项目名是AAA，运行时提示No rule to make target [路径]/AAA.pro for makefile。其实后面不是for makefile，不过大概的意思就是没有找到makefile中所对应的pro文件，在makefile文件中看一下你会发现pro文件的路径不对，直接用手改过来吗？当然不是。在Qt里对着该项目执行一下Qmake，再运行就ok了，这个问题通常发生在一个项目被移动了另一个地方，而原先的build目录还在引起的，也就是makefile没有被更新引起的。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,15 +5,22 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress配置 - 胖子汪洋的博客</title>
+  <title>python 学习笔记 - 胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
-  <meta name="description" content="修改默认的markdown文件 每次使用rake post时产生的新文件中都有如下格式： layout: post
-title: "Octopress配置"
-date: 2013-06-06 12:30
-comments: true
-keywords: octopress //默认是没有这行的 &hellip;">
-  <meta name="keywords" content="octopress配置, 个性化, set up">
+  <meta name="description" content="记录我使用python过程中遇到的各种问题 程序块的开始要使用冒号来标识，用缩进来表示这段代码都属于一个程序块。 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+def foo(list): for item in list: newItem = item + 5 print item if &hellip;">
+  <meta name="keywords" content="note python">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -21,7 +28,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up">
+  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/10/09/note-on-python">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="胖子汪洋的博客" type="application/atom+xml">
@@ -83,7 +90,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Octopress配置</h1>
+      <h1 class="entry-title">Python 学习笔记</h1>
     
     
       <p class="meta">
@@ -99,7 +106,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   
 
 
-<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+<time datetime="2013-10-09T09:28:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -108,56 +115,58 @@ keywords: octopress //默认是没有这行的 &hellip;">
   </header>
 
 
-<div class="entry-content"><h2>修改默认的markdown文件</h2>
+<div class="entry-content"><h3>记录我使用python过程中遇到的各种问题</h3>
 
-<p>每次使用rake post时产生的新文件中都有如下格式：</p>
-
-<pre>
-layout: post
-title: "Octopress配置"
-date: 2013-06-06 12:30
-comments: true
-keywords: octopress     //默认是没有这行的
-categories: 
-</pre>
+<!--more-->
 
 
-<p>如果想自定义这里的内容，比如添加一个key，<!--more-->比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
+<h5>程序块的开始要使用冒号来标识，用缩进来表示这段代码都属于一个程序块。</h5>
 
-<h2>让google search结果显示你的google+头像</h2>
-
-<ul>
-<li>在<a href="https://www.google.com.hk/webmasters/tools/richsnippets?q=www.catcrazy.cn&amp;html=">Structured Data Testing Tool</a>中测试是否已经正确设置</li>
-<li>在<a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=1408986">Author information in search results
-</a>中了解更多关于这方面东西</li>
-<li>其它方面自己google吧
-<img src="testGoogle.png" alt="testGoogle" />
-<img src="/images/testGoogle.png"></li>
-</ul>
-
-
-<h2>首页只显示正文</h2>
-
-<p>如果你只想让博客首页在显示该博文时只显示到某一处，那就在那儿添加一个<code>&lt;!--more--&gt;</code>。首页会多出一个继续阅读的链接，试一试就知道了。</p>
-
-<h2>我所参考的几个博客</h2>
-
-<ul>
-<li><a href="http://www.yanjiuyanjiu.com/blog/20130402/">我的Octopress</a></li>
-<li><a href="http://octopress.org/docs/">octopress官方文档</a></li>
-<li><a href="http://linyi.herokuapp.com/blog/config-octopress.html">octopress的个性化配置</a></li>
-<li><a href="http://whbzju.github.io/blog/2013/03/01/octopress-custom-config/">涉及导航，分类，sina，评论</a></li>
-<li><a href="http://khaos.github.io/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
-<li>[]</li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def foo(list):
+</span><span class='line'>  for item in list:
+</span><span class='line'>      newItem = item + 5
+</span><span class='line'>      print item
+</span><span class='line'>  if list[1] == '1':
+</span><span class='line'>      print "equal"
+</span><span class='line'>  else:
+</span><span class='line'>      print "not equal"
+</span><span class='line'>
+</span><span class='line'>list = ['1', '2', '4']        
+</span><span class='line'>foo (list)</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>迁移你的博客系统</h2>
+<h5>在序列中用引号与不用引号是不一样的</h5>
 
-<ul>
-<li><a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">Clone Your Octopress to Blog From Two Places</a></li>
-</ul>
+<p>下面代码里的两个list是不一样的</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>list1 = ['1', '2', '4']  
+</span><span class='line'>if list1[0] == '1':
+</span><span class='line'>  print 'YES'
+</span><span class='line'>  
+</span><span class='line'>list2 = [1, 2, 4]
+</span><span class='line'>if list2[0] == 1:
+</span><span class='line'>  print 'YES'</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>range后面用的是括号！！！</h5>
 </div>
 
 
@@ -180,12 +189,12 @@ categories:
   
 
 
-<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+<time datetime="2013-10-09T09:28:00+08:00" pubdate data-updated="true">Oct 9<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/yan-jiu-yan-jiu/'>研究研究</a>
+    <a class='category' href='/blog/categories/python/'>python</a>
   
 </span>
 
@@ -194,7 +203,7 @@ categories:
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/10/09/note-on-python/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/10/09/note-on-python/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -205,10 +214,10 @@ categories:
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/04/ios-core-data-guide/" title="Previous Post: iOS Core Data 入门">&laquo; iOS Core Data 入门</a>
+        <a class="basic-alignment left" href="/blog/2013/09/30/bubblesort/" title="Previous Post: 普通冒泡排序">&laquo; 普通冒泡排序</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/06/28/core-animation-notes-1/" title="Next Post: Core Animation Notes 1">Core Animation Notes 1 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/10/09/about-one-algorithm-one-week/" title="Next Post: 关于一周一算法">关于一周一算法 &raquo;</a>
       
     </p>
   </footer>
@@ -324,8 +333,8 @@ categories:
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/';
-        var disqus_url = 'http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/';
+        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/10/09/note-on-python/';
+        var disqus_url = 'http://igiu1988.github.io/blog/2013/10/09/note-on-python/';
         var disqus_script = 'embed.js';
       
     (function () {

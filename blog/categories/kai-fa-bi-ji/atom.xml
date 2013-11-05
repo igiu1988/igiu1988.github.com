@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 开发笔记 | 胖子汪洋的博客]]></title>
+  <link href="http://igiu1988.github.io/blog/categories/kai-fa-bi-ji/atom.xml" rel="self"/>
+  <link href="http://igiu1988.github.io/"/>
+  <updated>2013-11-05T14:45:59+08:00</updated>
+  <id>http://igiu1988.github.io/</id>
+  <author>
+    <name><![CDATA[汪洋]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ios证书制作解惑]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo/"/>
+    <updated>2013-11-05T14:06:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo</id>
+    <content type="html"><![CDATA[<p>这几天做了一个推送相关的需求，结果弄明白了一些以前关于证书的疑惑。</p>
+
+<p>先起个头，再写！！！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ios无线发布]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/ioswu-xian-fa-bu/"/>
+    <updated>2013-11-05T14:06:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/ioswu-xian-fa-bu</id>
+    <content type="html"><![CDATA[<p>先用adhoc方式打包应用。如果adhoc打包有问题，有转看我“ios证书制作解惑”。</p>
+
+<p>剩下的东西也都是copy网上的，我只是稍加整理一下。server已经放到<a href="https://github.com/igiu1988/iosadhoc">github</a>上了。具体参看项目的README</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[开发笔记 1]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/09/22/develop-note-1/"/>
+    <updated>2013-09-22T14:33:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/09/22/develop-note-1</id>
+    <content type="html"><![CDATA[<h3>viewWillAppear 与 viewWillLayoutSubviews</h3>
+
+<ul>
+<li>viewWillLayoutSubviews 只在controller要显示时才会走一遍。viewWillAppear则会再被push、modal或者pop back时都会走一次</li>
+<li>viewWillLayoutSubviews 在viewDidLoad后会走一次。在运行时如果addsubview时会走再走一次。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[胖子汪洋的博客]]></title>
   <link href="http://igiu1988.github.io/atom.xml" rel="self"/>
   <link href="http://igiu1988.github.io/"/>
-  <updated>2013-10-14T13:01:47+08:00</updated>
+  <updated>2013-11-05T14:45:59+08:00</updated>
   <id>http://igiu1988.github.io/</id>
   <author>
     <name><![CDATA[汪洋]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ios证书制作解惑]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo/"/>
+    <updated>2013-11-05T14:06:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/ioszheng-shu-zhi-zuo-jie-huo</id>
+    <content type="html"><![CDATA[<p>这几天做了一个推送相关的需求，结果弄明白了一些以前关于证书的疑惑。</p>
+
+<p>先起个头，再写！！！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ios无线发布]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/ioswu-xian-fa-bu/"/>
+    <updated>2013-11-05T14:06:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/ioswu-xian-fa-bu</id>
+    <content type="html"><![CDATA[<p>先用adhoc方式打包应用。如果adhoc打包有问题，有转看我“ios证书制作解惑”。</p>
+
+<p>剩下的东西也都是copy网上的，我只是稍加整理一下。server已经放到<a href="https://github.com/igiu1988/iosadhoc">github</a>上了。具体参看项目的README</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[shell替换文本]]></title>
+    <link href="http://igiu1988.github.io/blog/2013/11/05/shellti-huan-wen-ben/"/>
+    <updated>2013-11-05T13:45:00+08:00</updated>
+    <id>http://igiu1988.github.io/blog/2013/11/05/shellti-huan-wen-ben</id>
+    <content type="html"><![CDATA[<h2>就记录一下sed替换文本的用法</h2>
+
+<h4>该目录下的所有txt中的china替换为chinese</h4>
+
+<p><code>sed -i '' 's,china,chinese,g' *.txt</code> 一个目录下的</p>
+
+<h4>递归所有目录文件中的china替换为chinese</h4>
+
+<p><code>find . -type f -exec sed -i '' 's,china,chinese,g' {} +</code></p>
+
+<h4>下面的命令则是指定了搜索的文件类型，并替换这些文件中的指定内容</h4>
+
+<p><code>find -name "*.txt" -exec sed -i 's,china,chinese,g' {} +</code></p>
+
+<h4>递归查找包含指定字符串的文件:</h4>
+
+<p><code>find . -type f -exec grep "http://10.5.31.143:8080" {} \;</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[我机器的一些配置]]></title>
@@ -27,7 +74,32 @@
     <link href="http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/"/>
     <updated>2013-10-14T09:26:00+08:00</updated>
     <id>http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji</id>
-    <content type="html"><![CDATA[<h4>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”</h4>
+    <content type="html"><![CDATA[<h3>Qt学习笔记</h3>
+
+<p>该笔记现处理杂乱无章的状态，等记得一定多了，再分类吧</p>
+
+<ul>
+<li>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”</li>
+<li>explicit关键字的介绍<a href="http://blog.csdn.net/ma_nong/article/details/7696690">Qt C++中的关键字explicit</a></li>
+<li><a href="http://xwz89314.blog.163.com/blog/static/40510004201012725354619/">Q_OBJECT宏</a></li>
+<li>Qt中多继承时，QObject要排在第一位</li>
+<li>Qt控制台输入内容，再转入QString，再转为char *</li>
+</ul>
+
+
+<p>&#8220;`</p>
+
+<pre><code>QString qstr;    QTextStream in(stdin);    in&gt;&gt;qstr;    std::string tempStr = qstr.toStdString();    const char* ch = tempStr.c_str();
+</code></pre>
+
+<p> &#8220;`</p>
+
+<h3>关于一些错误的解决</h3>
+
+<ul>
+<li>比如你的项目名是AAA，运行时提示No rule to make target [路径]/AAA.pro for makefile。其实后面不是for makefile，不过大概的意思就是没有找到makefile中所对应的pro文件，在makefile文件中看一下你会发现pro文件的路径不对，直接用手改过来吗？当然不是。在Qt里对着该项目执行一下Qmake，再运行就ok了，这个问题通常发生在一个项目被移动了另一个地方，而原先的build目录还在引起的，也就是makefile没有被更新引起的。</li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -126,7 +198,7 @@
     <link href="http://igiu1988.github.io/blog/2013/09/30/bubblesort/"/>
     <updated>2013-09-30T10:27:00+08:00</updated>
     <id>http://igiu1988.github.io/blog/2013/09/30/bubblesort</id>
-    <content type="html"><![CDATA[<h3>本文参考了两个文章</h3>
+    <content type="html"><![CDATA[<h3>本文参考了的一些文章</h3>
 
 <h5>冒泡排序</h5>
 

@@ -5,15 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress配置 - 胖子汪洋的博客</title>
+  <title>Qt学习笔记 - 胖子汪洋的博客</title>
   <meta name="author" content="汪洋">
   
-  <meta name="description" content="修改默认的markdown文件 每次使用rake post时产生的新文件中都有如下格式： layout: post
-title: "Octopress配置"
-date: 2013-06-06 12:30
-comments: true
-keywords: octopress //默认是没有这行的 &hellip;">
-  <meta name="keywords" content="octopress配置, 个性化, set up">
+  <meta name="description" content="Qt学习笔记 该笔记现处理杂乱无章的状态，等记得一定多了，再分类吧 Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”
+explicit关键字的介绍Qt C++中的关键字explicit
+Q_OBJECT宏
+Qt中多继承时， &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -21,7 +20,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up">
+  <link rel="canonical" href="http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="胖子汪洋的博客" type="application/atom+xml">
@@ -83,7 +82,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Octopress配置</h1>
+      <h1 class="entry-title">Qt学习笔记</h1>
     
     
       <p class="meta">
@@ -99,7 +98,7 @@ keywords: octopress //默认是没有这行的 &hellip;">
   
 
 
-<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+<time datetime="2013-10-14T09:26:00+08:00" pubdate data-updated="true">Oct 14<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -108,54 +107,30 @@ keywords: octopress //默认是没有这行的 &hellip;">
   </header>
 
 
-<div class="entry-content"><h2>修改默认的markdown文件</h2>
+<div class="entry-content"><h3>Qt学习笔记</h3>
 
-<p>每次使用rake post时产生的新文件中都有如下格式：</p>
-
-<pre>
-layout: post
-title: "Octopress配置"
-date: 2013-06-06 12:30
-comments: true
-keywords: octopress     //默认是没有这行的
-categories: 
-</pre>
-
-
-<p>如果想自定义这里的内容，比如添加一个key，<!--more-->比如上面的keywords，那么就修改Rakefile，搜索<code>layout:</code>你就知道接下来怎么做了。</p>
-
-<h2>让google search结果显示你的google+头像</h2>
+<p>该笔记现处理杂乱无章的状态，等记得一定多了，再分类吧</p>
 
 <ul>
-<li>在<a href="https://www.google.com.hk/webmasters/tools/richsnippets?q=www.catcrazy.cn&amp;html=">Structured Data Testing Tool</a>中测试是否已经正确设置</li>
-<li>在<a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=1408986">Author information in search results
-</a>中了解更多关于这方面东西</li>
-<li>其它方面自己google吧
-<img src="testGoogle.png" alt="testGoogle" />
-<img src="/images/testGoogle.png"></li>
+<li>Qt工程目录写要创建在英文路径下，要不然会出现“qmake.exe&#8221;退出，退出代码 2”</li>
+<li>explicit关键字的介绍<a href="http://blog.csdn.net/ma_nong/article/details/7696690">Qt C++中的关键字explicit</a></li>
+<li><a href="http://xwz89314.blog.163.com/blog/static/40510004201012725354619/">Q_OBJECT宏</a></li>
+<li>Qt中多继承时，QObject要排在第一位</li>
+<li>Qt控制台输入内容，再转入QString，再转为char *</li>
 </ul>
 
 
-<h2>首页只显示正文</h2>
+<p>&#8220;`</p>
 
-<p>如果你只想让博客首页在显示该博文时只显示到某一处，那就在那儿添加一个<code>&lt;!--more--&gt;</code>。首页会多出一个继续阅读的链接，试一试就知道了。</p>
+<pre><code>QString qstr;    QTextStream in(stdin);    in&gt;&gt;qstr;    std::string tempStr = qstr.toStdString();    const char* ch = tempStr.c_str();
+</code></pre>
 
-<h2>我所参考的几个博客</h2>
+<p> &#8220;`</p>
 
-<ul>
-<li><a href="http://www.yanjiuyanjiu.com/blog/20130402/">我的Octopress</a></li>
-<li><a href="http://octopress.org/docs/">octopress官方文档</a></li>
-<li><a href="http://linyi.herokuapp.com/blog/config-octopress.html">octopress的个性化配置</a></li>
-<li><a href="http://whbzju.github.io/blog/2013/03/01/octopress-custom-config/">涉及导航，分类，sina，评论</a></li>
-<li><a href="http://khaos.github.io/blog/2012/12/06/using-chinese-category-tags-in-octopress/">Octopress易筋经，中文分类标签</a></li>
-<li>[]</li>
-</ul>
-
-
-<h2>迁移你的博客系统</h2>
+<h3>关于一些错误的解决</h3>
 
 <ul>
-<li><a href="http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/">Clone Your Octopress to Blog From Two Places</a></li>
+<li>比如你的项目名是AAA，运行时提示No rule to make target [路径]/AAA.pro for makefile。其实后面不是for makefile，不过大概的意思就是没有找到makefile中所对应的pro文件，在makefile文件中看一下你会发现pro文件的路径不对，直接用手改过来吗？当然不是。在Qt里对着该项目执行一下Qmake，再运行就ok了，这个问题通常发生在一个项目被移动了另一个地方，而原先的build目录还在引起的，也就是makefile没有被更新引起的。</li>
 </ul>
 
 </div>
@@ -180,12 +155,12 @@ categories:
   
 
 
-<time datetime="2013-06-06T12:30:00+08:00" pubdate data-updated="true">Jun 6<span>th</span>, 2013</time>
+<time datetime="2013-10-14T09:26:00+08:00" pubdate data-updated="true">Oct 14<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/yan-jiu-yan-jiu/'>研究研究</a>
+    <a class='category' href='/blog/categories/qt/'>Qt</a>
   
 </span>
 
@@ -194,7 +169,7 @@ categories:
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/" data-via="" data-counturl="http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -205,10 +180,10 @@ categories:
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/04/ios-core-data-guide/" title="Previous Post: iOS Core Data 入门">&laquo; iOS Core Data 入门</a>
+        <a class="basic-alignment left" href="/blog/2013/10/09/about-one-algorithm-one-week/" title="Previous Post: 关于一周一算法">&laquo; 关于一周一算法</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/06/28/core-animation-notes-1/" title="Next Post: Core Animation Notes 1">Core Animation Notes 1 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/10/14/wo-ji-qi-de-xie-pei-zhi/" title="Next Post: 我机器的一些配置">我机器的一些配置 &raquo;</a>
       
     </p>
   </footer>
@@ -324,8 +299,8 @@ categories:
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/';
-        var disqus_url = 'http://igiu1988.github.io/blog/2013/06/06/octpress-set-up/';
+        var disqus_identifier = 'http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/';
+        var disqus_url = 'http://igiu1988.github.io/blog/2013/10/14/qtxue-xi-bi-ji/';
         var disqus_script = 'embed.js';
       
     (function () {
